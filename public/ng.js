@@ -1,5 +1,5 @@
 (function() {
-    angular.module('app', [])
+    angular.module('app', ['ngMaterial'])
     .component('navMenu', {
         controller() {
             console.log('nav-menu')

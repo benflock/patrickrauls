@@ -4,30 +4,35 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
+    <link rel="stylesheet" href="/css/style.css">
     <title>Patrick Rauls</title>
-    <script defer src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.2/angular.min.js"></script>
+    <script defer src="http://ajax.googleapis.com/ajax/libs/angularjs/1.6.2/angular.min.js"></script>
+    <script defer src="http://ajax.googleapis.com/ajax/libs/angularjs/1.6.2/angular-animate.min.js"></script>
+    <script defer src="http://ajax.googleapis.com/ajax/libs/angularjs/1.6.2/angular-aria.min.js"></script>
+    <script defer src="http://ajax.googleapis.com/ajax/libs/angularjs/1.6.2/angular-messages.min.js"></script>
+    <script defer src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
     <script defer src="ng.js" charset="utf-8"></script>
 </head>
 
 <body>
     <header>
-        <h1>Patrick Rauls</h1>
         <nav-menu></nav-menu>
     </header>
     <main>
-        <section>
+        <section id="landing">
             <landing></landing>
         </section>
-        <section>
+        <section id="thoughts">
             <thoughts></thoughts>
         </section>
-        <section>
+        <section id="projects">
             <projects></projects>
         </section>
-        <section>
+        <section id="cv">
             <cv></cv>
         </section>
-        <section>
+        <section id="holla">
             <holla></holla>
         </section>
     </main>

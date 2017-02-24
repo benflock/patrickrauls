@@ -1,0 +1,12 @@
+body {
+  color: #133337;
+}
+.md-input {
+  transition: border 0.1s;
+}
+label {
+  transition: color 0.2s;
+}
+section, footer {
+  padding: 3rem;
+}
