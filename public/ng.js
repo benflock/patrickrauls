@@ -6,23 +6,17 @@
         },
         templateUrl: './templates/nav-menu.html'
     })
-    .component('landing', {
-        controller() {
-            console.log('landing')
-        },
-        templateUrl: './templates/landing.html'
+    .component('projects', {
+      controller() {
+        console.log('projects')
+      },
+      templateUrl: './templates/projects.html'
     })
     .component('thoughts', {
         controller() {
             console.log('thoughts')
         },
         templateUrl: './templates/thoughts.html'
-    })
-    .component('projects', {
-        controller() {
-            console.log('projects')
-        },
-        templateUrl: './templates/projects.html'
     })
     .component('cv', {
         controller() {
