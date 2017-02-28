@@ -26,3 +26,15 @@ nav ul li a {
   color: #000;
   text-decoration: none;
 }
+p {
+  line-height: 1.8rem;
+}
+code, .code {
+  background-color: #fff;
+  border: .05rem solid rgba(0,0,0,0.1);
+  border-radius: .2rem;
+  padding: 0.4rem;
+}
+pre {
+  white-space: pre-wrap;
+}

@@ -27,76 +27,78 @@
             <thoughts></thoughts>
             <h2>Broken Promises</h2>
             <p>One day soon, you will feel like an idiot. Everyone tells you that in this industry. I used to feign believing them purely as a symptom my very fake humility. Now I fully believe them purely as a symptom of my very real humiliation.</p>
-            <p>You see, as a top tier imposter, I've become a sort of localized beginner expert, as <a target="_blank" href="https://twitter.com/thenodester">James Gibson</a> of <a target="_blank" href="https://flowhub.co/">Flowhub</a> would say. In my little
+            <p>You see, as a top tier imposter, I've become a sort of localized beginner expert (<em>label credit: <a target="_blank" href="https://twitter.com/thenodester">James Gibson</a> of <a target="_blank" href="https://flowhub.co/">Flowhub</a></em>). In my little
                 fish tank as a code school student with <a target="_blank" href="http://galvanize.com">Galvanize</a> I've become pretty sure of myself.</p>
             <p>And then, promises.</p>
-            <p>For those who may be lost, <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promises</a> are something Satan invented to make sure he waited to torture you until after he stole your soul.</p>
-            <p>He needed a way in his favorite programming language, Javascript, of course, to reliably handle tasks of unknown time requirements that had to be done in a particular sequence.</p>
+            <p>For those who may be unfamiliar, <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promises</a> are something Satan invented to make sure he waited to torture you until after he stole your soul.</p>
+            <p>He needed a way in his favorite programming language, Javascript, of course, to reliably automate tasks that had unknown time requirements and had to be done in a particular sequence.</p>
             <p>When you need to automate heating up an oven for baking, say, the souls of the damned, but you don't know how long it's going to take to steal those souls, what's an imp to do?</p>
             <p>As we all know, stealing souls happens asynchronously, and Satan was wasting a lot of brimstone brewing up an inferno before the souls even showed up.</p>
             <p>With Promises, he was able to make sure not to flip on the lake of fire until after little Sammy Shoplifter drew his last breath and landed safely in eternal damnation. He accomplished this like so:</p>
-<code>
-<pre>
-&lt;script&gt;
-let SammyShoplifter;
+<div class="code">
+<pre>  &lt;script&gt;
+    let SammyShoplifter = {
+      soul: 'Hangs in the balance'
+    };
 
-//a dormant lake of fire needn't any brimstone.
-let brimstone = 0;
+    //a dormant lake of fire needn't any brimstone.
+    let brimstone = 0;
 
-//define Satan's important work of stealing souls
-let steal = waywardSoul => {
+    //how do you bring that lake to a nice simmer? add brimstone... duh.
+    let fire = () => {
+      brimstone++;
+      console.log(brimstone)
+    }
 
-    //I don't know when or if this wayward soul is going to be in the bag.
-    //If he stays evil, I deliver on my promise aka "resolve"
-    //if he turns to good and it fails aka "reject".
+    //define Satan's important work of stealing souls
+    let steal = waywardSoul => {
 
-    return new Promise((resolve, reject) => {
+      //I don't know when or if this wayward soul is going to be in the bag.
+      //If he stays evil, I deliver on my promise, aka "resolve"
+      //if he turns to good, it fails, aka "reject".
 
-        //weight the value of this soul. flipping a coin seems about right
-        waywardSoul = Math.random() >= 0.5 ? 'evil' : 'good';
+      return new Promise((resolve, reject) => {
 
-        if(waywardSoul == 'evil') {
+          //souls can go either way. flip a coin
+          waywardSoul = Math.random() >= 0.5 ? 'evil' : 'good';
 
-          //send this punk to hell!
-          resolve(waywardSoul);
-        } else {
+          if(waywardSoul == 'evil') {
 
-          //deathbed conversion
-          throw TypeError('Soul says: I\'ve seen the light!')
-        }
+            //send this punk to hell!
+            resolve(waywardSoul);
+          } else {
+
+            //deathbed conversion
+            //notice I don't specifically put reject in here. I don't need to,
+            //Any thrown error will trigger a reject.
+            throw TypeError('Soul says: I\'ve seen the light!')
+          }
+      })
+    }
+
+    //enough theory. The bell tolls for you, Sammy Shoplifter, aka call function
+    steal(SammyShoplifter.soul)
+
+    //When I finally win this soul get the fire started like so
+    .then(judgement => {
+      console.log(judgement)
+      fire();
     })
-  }
+    //but if he listens to his better angels, catch that error
+    .catch(repentance => {
+      console.log(repentance)
+    })
 
-  //how do you bring that lake to a nice simmer? add brimstone... duh.
-  let fire = () => {
-    brimstone++;
-    console.log(brimstone)
-  }
+    //either way, I'm getting Torchy's Tacos after this
+    .finally(() => {
+        getTorchys(trailerParkExtraTrashy)
+    })
+  &lt;/script&gt;</div></pre>
+</div>
 
-  //enough theory. The bell tolls for you, Sammy Shoplifter
-  steal(SammyShoplifter)
-
-  //uh oh, he might be having a change of heart. This could take some convincing.
-  //When I finally win this soul get the fire started
-  //like so
-  .then(judgement => {
-    console.log(judgement)
-    fire();
-  })
-  //but if he listens to his better angels, catch that error
-  .catch((repentance) => {
-    console.log(repentance)
-  })
-
-  //either way, I'm getting Torchy's Tacos after this
-  .finally(() => {
-      getTorchys(trailerParkExtraTrashy)
-  })
-&lt;/script&gt;
-
-</pre>
-</code>
-
+            <p>Promises really have been quite useful for our favorite fallen angel. But this doesn't tell the half of it. The great thing about this pattern is that you can throw as many <code>.then()</code> clauses in the chain as your faithful heart desires</p>
+            <p>Even better, you can still leave the one <code>.catch()</code> and it will handle whatever error you throw at it from any and all <code>.then()</code> blocks.</p>
+            <p>Here's where the humiliation comes in.</p>
         </section>
         <section id="cv">
             <cv></cv>
